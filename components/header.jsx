@@ -3,6 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
+import { LayoutDashboard } from 'lucide-react';
 
 const Header = () => {
   return (
@@ -21,6 +22,15 @@ const Header = () => {
 
         {/* Auth Buttons */}
         <div>
+          <SignedIn>
+            <Link href={"/dashboard"}>
+              <Button variant="outline">
+                <LayoutDashboard size={18} />
+                <span>Dashboard</span>
+              </Button>
+            </Link>
+          </SignedIn>
+
           <SignedOut>
             <SignInButton forceRedirectUrl='/dashboard'>
               <Button variant="outline">Login</Button>
