@@ -1,15 +1,20 @@
-import HeroSection from "@/components/hero";
-import { Card, CardContent } from "@/components/ui/card";
-import { statsData, featuresData } from "@/data/landing";
-import Image from "next/image";
-import { howItWorksData, testimonialsData } from "@/data/landing";
-import Link from "next/link";
+import React from "react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import {
+  featuresData,
+  howItWorksData,
+  statsData,
+  testimonialsData,
+} from "@/data/landing";
+import HeroSection from "@/components/hero";
+import Link from "next/link";
 
-
-export default function Home() {
+const LandingPage = () => {
   return (
-    <div className="mt-0">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
       <HeroSection />
 
       {/* Stats Section */}
@@ -99,7 +104,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      {/* CTA Section */}
       <section className="py-20 bg-blue-600">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
@@ -119,9 +124,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-
     </div>
   );
-}
+};
 
+export default LandingPage;
